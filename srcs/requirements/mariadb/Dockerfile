@@ -1,5 +1,6 @@
 FROM debian:bullseye
 
+RUN mkdir -p /var/lib/mariadb/
 
 RUN apt update -y && apt upgrade -y
 RUN apt -y install mariadb-server

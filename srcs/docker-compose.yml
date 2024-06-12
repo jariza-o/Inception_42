@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb_cont
+    build:
+      context: ./requirements/mariadb
+      dockerfile: Dockerfile # no sería necesario
+    expose:
+      - "3306"
+    env_file:
+      - .env
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - inception
+    restart: always
+
+networks:
+  inception:
+    driver: bridge
+
+volumes:
+  db:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '${PWD}/requirements/mariadb/vol'
