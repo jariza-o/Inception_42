@@ -11,4 +11,4 @@ RUN mkdir -p /root/tools/
 COPY ./tools/config.sh /root/tools/config.sh
 RUN chmod -R 777 /root/tools/config.sh
 
-CMD [ "bash", "/root/tools/config.sh" ]
+ENTRYPOINT [ "bash", "/root/tools/config.sh" ]

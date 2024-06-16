@@ -8,7 +8,8 @@ NC='\033[39m'
 
 
 echo "${BLUE}Start MYSQL ${NC}"
-service mariadb start;
+# service mariadb start;
+mysqld_safe &
 sleep 10
 echo "${GREEN}MYSQL Started${NC}"
 
