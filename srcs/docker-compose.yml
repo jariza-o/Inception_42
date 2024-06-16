@@ -16,6 +16,19 @@ services:
     networks:
       - inception
     restart: always
+  wordpress:
+    image: wordpress
+    container_name: wordpress_cont
+    build: ./requirements/wordpress
+    expose:
+      - "9000"
+    env_file:
+      - .env
+    volumes:
+      - wp:/var/www
+    networks:
+      - inception
+    restart: always
 
 networks:
   inception:
@@ -28,3 +41,9 @@ volumes:
       type: 'none'
       o: 'bind'
       device: '${PWD}/requirements/mariadb/vol'
+  wp:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '${PWD}/requirements/wordpress/vol'
