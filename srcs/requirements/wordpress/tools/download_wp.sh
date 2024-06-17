@@ -17,11 +17,13 @@ WP=/usr/local/bin/wp/wp-cli.phar
     wget https://wordpress.org/latest.zip -P /var/www/
     unzip /var/www/latest.zip
     rm -rf /var/www/latest.zip
+    rm -rf /var/www/wordpress/wp-config.php # Delete wp-config for config in the first installation
     echo "${GREEN}Wordpress Downloaded${NC}"
 
 # Install CLI (wp)
     echo "${BLUE}Installing wp${NC}"
     wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -P /root/conf
+        # cp /var/www/wp-cli.phar  /root/conf/wp-cli.phar #eliminar cuando tenga internet
     chmod +x /root/conf/wp-cli.phar
     if [ ! -d "/usr/local/bin/wp" ]; then
         mkdir -p "/usr/local/bin/wp"

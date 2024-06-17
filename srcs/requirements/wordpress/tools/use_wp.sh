@@ -9,13 +9,9 @@ NC='\033[39m'
 #WP
 WP=/usr/local/bin/wp/wp-cli.phar
 
-echo "ENTRA O NO ENTRAAAA"
-
 # Config Wordpress
-    if [ ! -e "/var/www/wordpress/wp-config.php" ]; then # NOSE SI ES ESTA OTRA RUTA /var/www/wp-config.php
+    if [ ! -e "/var/www/wordpress/wp-config.php" ]; then
         echo "${BLUE}Configuring Wordpress ${NC}"
-        echo $MYSQL_DATABASE_NAME
-        sleep 20000
         ${WP} config create --allow-root --dbname=$MYSQL_DATABASE_NAME --dbuser=$MYSQL_USER \
                         --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_HOSTNAME:3306 \
                         --path='/var/www/wordpress/'
@@ -24,8 +20,8 @@ echo "ENTRA O NO ENTRAAAA"
         echo "${GREEN}WordPress Configured${NC}"
     fi
     
-    if [ ! -d "/run/php" ]; then
-        mkdir -p "/run/php"
-    fi
+    # if [ ! -d "/run/php" ]; then
+    #     mkdir -p "/run/php"
+    # fi
 
-service php7.4-fpm start
+# service php7.4-fpm start #ESTO NO SE LO QUE TENGO QUE HACER, COMO LO INICIO
