@@ -1,3 +1,4 @@
 vol/*
 vol/*/*
 srcs/requirements/wordpress/vol/wordpress
+srcs/requirements/wordpress/vol/*

@@ -23,12 +23,11 @@ WP=/usr/local/bin/wp/wp-cli.phar
 # Install CLI (wp)
     echo "${BLUE}Installing wp${NC}"
     wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -P /root/conf
-        # cp /var/www/wp-cli.phar  /root/conf/wp-cli.phar #eliminar cuando tenga internet
     chmod +x /root/conf/wp-cli.phar
     if [ ! -d "/usr/local/bin/wp" ]; then
         mkdir -p "/usr/local/bin/wp"
     fi
     mv /root/conf/wp-cli.phar /usr/local/bin/wp
-    ${WP} --info # TEST
+    # ${WP} --info # TEST
     ${WP} cli update
     echo "${GREEN}WP installed${NC}"
