@@ -12,7 +12,8 @@ services:
     env_file:
       - .env
     volumes:
-      - db:/var/lib/mariadb
+      # - db:/var/lib/mmariadb # asi funciona mariadb, pero no va la base de datos en el vol
+      - db:/var/lib/mysql
     networks:
       - inception
     restart: always
