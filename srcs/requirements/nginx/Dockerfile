@@ -27,8 +27,8 @@ RUN /root/tools/config_nginx.sh
 
 
 
-# CMD ["nginx", "-g", "daemon off;"]
-CMD ["bash", "-c", "while true; do echo 'Container is running'; sleep 5; done"]
+CMD ["nginx", "-g", "daemon off;"]
+# CMD ["bash", "-c", "while true; do echo 'Container is running'; sleep 5; done"]
 
 
 
