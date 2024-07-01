@@ -8,7 +8,6 @@ NC='\033[39m'
 
 
 echo "${BLUE}Start MYSQL ${NC}"
-# service mariadb start;
 mysqld_safe &
 sleep 10
 echo "${GREEN}MYSQL Started${NC}"
@@ -27,8 +26,6 @@ echo "${BLUE}Create MYSQL User ${NC}"
 mysql -uroot -p"${MYSQL_ROOT_PASSWORD}" -e "CREATE USER IF NOT EXISTS \`${MYSQL_USER}\`@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}';"
 mysql -uroot -p"${MYSQL_ROOT_PASSWORD}" -e "GRANT ALL PRIVILEGES ON \`${MYSQL_DATABASE_NAME}\`.* TO \`${MYSQL_USER}\`@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';"
 echo "${GREEN}MYSQL User Created${NC}"
-
-
 
 mysql -uroot -p"${MYSQL_ROOT_PASSWORD}" -e "FLUSH PRIVILEGES;"
 

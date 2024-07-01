@@ -12,9 +12,5 @@ RUN chmod +x /root/tools/download_wp.sh
 RUN chmod +x /root/tools/use_wp.sh
 
 RUN /root/tools/download_wp.sh
+
 CMD ["/root/tools/use_wp.sh"]
-
-# ENTRYPOINT ["bash", "/root/tools/download_wp.sh" ] 
-
-# CMD ["bash", "/root/tools/use_wp.sh"]
-# CMD ["bash", "-c", "while true; do echo 'Container is running'; sleep 5; done"]

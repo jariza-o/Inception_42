@@ -6,7 +6,7 @@
 #    By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/01 17:13:14 by jariza-o          #+#    #+#              #
-#    Updated: 2024/07/01 18:38:54 by jariza-o         ###   ########.fr        #
+#    Updated: 2024/07/01 18:51:04 by jariza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ fclean:
 		@docker system prune --all --force --volumes
 		@docker network prune --force
 		@docker volume prune --force
-		@docker volume rm $(docker volmen ls -q)
+		@docker volume rm $(docker volume ls -q)
 		@rm -rf ~/data/wordpress
 		@rm -rf ~/data/mariadb
 
