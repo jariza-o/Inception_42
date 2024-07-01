@@ -16,6 +16,8 @@ services:
   wordpress:
     container_name: wordpress_cont
     build: ./requirements/wordpress/
+    depends_on:
+      - mariadb
     expose:
       - "9000"
     env_file:
@@ -25,6 +27,21 @@ services:
     networks:
       - inception
     restart: always
+  nginx:
+    container_name: nginx_cont
+    build: ./requirements/nginx/
+    depends_on:
+      - wordpress
+    ports:
+      - "443:443"
+    env_file:
+      - .env
+    volumes:
+      - wp:/var/www
+    networks:
+      - inception
+    restart: always
+
 networks:
   inception:
     driver: bridge

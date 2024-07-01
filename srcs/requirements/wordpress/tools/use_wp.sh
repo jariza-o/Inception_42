@@ -28,7 +28,6 @@ WP=/usr/local/bin/wp/wp-cli.phar
 
     # Config Wordpress
     if [ ! -e "/var/www/wordpress/wp-config.php" ]; then
-        sleep 30
         echo "${BLUE}Configuring Wordpress ${NC}"
         ${WP} config create --allow-root --dbname=$MYSQL_DATABASE_NAME --dbuser=$MYSQL_USER \
                         --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_HOSTNAME:3306 \

@@ -3,11 +3,7 @@ FROM debian:bullseye
 RUN apt update -y && apt upgrade -y
 RUN apt -y install unzip wget php php7.4 php-fpm php-mysql
 
-# RUN mkdir -p /mnt/wp
-# RUN  chmod -R 777 /mnt/wp
-
 RUN mkdir -p /root/tools
-RUN mkdir -p /root/conf
 
 COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 COPY ./tools/download_wp.sh /root/tools/download_wp.sh
