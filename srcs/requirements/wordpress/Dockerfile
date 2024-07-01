@@ -16,7 +16,6 @@ RUN chmod +x /root/tools/download_wp.sh
 RUN chmod +x /root/tools/use_wp.sh
 
 RUN /root/tools/download_wp.sh
-ENTRYPOINT ["sh"]
 CMD ["/root/tools/use_wp.sh"]
 
 # ENTRYPOINT ["bash", "/root/tools/download_wp.sh" ] 
