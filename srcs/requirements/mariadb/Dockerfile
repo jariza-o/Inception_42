@@ -22,8 +22,8 @@ RUN chmod -R 777 /root/tools/config.sh
 
 # ENTRYPOINT [ "bash", "/root/tools/config.sh" ]
 # CMD [ "bash", "/root/tools/config.sh" ]
-CMD ["bash", "-c", "while true; do echo 'Container is running'; sleep 5; done"]
+# CMD ["bash", "-c", "while true; do echo 'Container is running'; sleep 5; done"]
 
 # CMD ["mysqld"]
 
-# ENTRYPOINT [ "bash", "/root/tools/config.sh" ]
+CMD [ "bash", "/root/tools/config.sh" ]

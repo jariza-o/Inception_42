@@ -8,8 +8,8 @@ services:
       - "3306"
     env_file:
       - .env
-    # volumes:
-    #   - db:/var/lib/mysql
+    volumes:
+      - db:/var/lib/mysql
     networks:
       - inception
     restart: always
@@ -23,4 +23,4 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '${PWD}/requirements/mariadb/vol'
+      device: '~/data/mariadb/'
