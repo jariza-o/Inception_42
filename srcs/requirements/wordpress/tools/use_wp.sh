@@ -22,7 +22,6 @@ WP=/usr/local/bin/wp/wp-cli.phar
                         --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_HOSTNAME:3306 \
                         --path='/var/www/wordpress/'
         ${WP} core install     --url=$DOMAIN_NAME --title=$WORDPRESS_SITE_TITLE --admin_user=$WORDPRESS_ROOT_USER --admin_password=$WORDPRESS_ROOT_PASSWORD --admin_email=$WORDPRESS_ROOT_EMAIL --allow-root --path='/var/www/wordpress/'
-        #${WP} user create      --role=author $WORDPRESS_USER $WORDPRESS_EMAIL --user_pass=$WORDPRESS_PASSWORD --path='/var/www/wordpress/' # Puedo Poner >> log.txt
         ${WP} user create      $WORDPRESS_USER $WORDPRESS_EMAIL --role=author --user_pass=$WORDPRESS_PASSWORD --allow-root --path='/var/www/wordpress/'
         echo "${GREEN}WordPress Configured${NC}"
     fi
