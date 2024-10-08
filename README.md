@@ -29,8 +29,8 @@ A debian container, with ngingx for deploy the site and use the SSL certicates.
 Only use a network, the MariaDB and Wordpress containers expose two ports, and the Nginx container fordward the port 443 to the host.
 
 ## Volumes
-This has teo volumes:
+This has two volumes:
 ### DataBase
 In this volume is saved all information about the MariaDB DataBase. Is used only by the MariaDB container.
-## Wordpress
+### Wordpress
 This volume is used by the Wordpress container and by the Nginx container for deploy the site.
